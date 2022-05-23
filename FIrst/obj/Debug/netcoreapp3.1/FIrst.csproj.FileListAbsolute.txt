@@ -1,0 +1,14 @@
+D:\abhay\Bak\FIrst\bin\Debug\netcoreapp3.1\FIrst.exe
+D:\abhay\Bak\FIrst\bin\Debug\netcoreapp3.1\FIrst.deps.json
+D:\abhay\Bak\FIrst\bin\Debug\netcoreapp3.1\FIrst.runtimeconfig.json
+D:\abhay\Bak\FIrst\bin\Debug\netcoreapp3.1\FIrst.runtimeconfig.dev.json
+D:\abhay\Bak\FIrst\bin\Debug\netcoreapp3.1\FIrst.dll
+D:\abhay\Bak\FIrst\bin\Debug\netcoreapp3.1\FIrst.pdb
+D:\abhay\Bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.csproj.AssemblyReference.cache
+D:\abhay\Bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.GeneratedMSBuildEditorConfig.editorconfig
+D:\abhay\Bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.AssemblyInfoInputs.cache
+D:\abhay\Bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.AssemblyInfo.cs
+D:\abhay\Bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.csproj.CoreCompileInputs.cache
+D:\abhay\Bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.dll
+D:\abhay\Bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.pdb
+D:\abhay\Bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.genruntimeconfig.cache
