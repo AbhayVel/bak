@@ -19,7 +19,10 @@ namespace FIrst
             int[] answer = SortNumbers(employee, (x) => x > 30);  //call back method/annonomious method
                                                                   //int[] answer2 = SortNumbers2(employee, 80);
                                                                   // int[] answer2 = CombinedFunc(employee, 80, "top");
-            int[] answer2 = SortNumbers(employee, (x) => x < 80);
+            int[] answer2 = Util.Common(employee, (x) => x < 80);
+            int[] answer3 = Util.Common(answer2, (x) => x > 40);
+
+
             //int[] answer3 = SortNumbers3(employee, 2);
             int[] answer3 = CombinedFunc(employee, 2, "divisor");
 
