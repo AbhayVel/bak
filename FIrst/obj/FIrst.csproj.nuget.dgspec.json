@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\abhay\\Bak\\FIrst\\FIrst.csproj": {}
+    "C:\\Users\\bakty\\Documents_local\\Abhay\\project\\bak\\FIrst\\FIrst.csproj": {}
   },
   "projects": {
-    "D:\\abhay\\Bak\\FIrst\\FIrst.csproj": {
+    "C:\\Users\\bakty\\Documents_local\\Abhay\\project\\bak\\FIrst\\FIrst.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\abhay\\Bak\\FIrst\\FIrst.csproj",
+        "projectUniqueName": "C:\\Users\\bakty\\Documents_local\\Abhay\\project\\bak\\FIrst\\FIrst.csproj",
         "projectName": "FIrst",
-        "projectPath": "D:\\abhay\\Bak\\FIrst\\FIrst.csproj",
-        "packagesPath": "C:\\Users\\AjayV\\.nuget\\packages\\",
-        "outputPath": "D:\\abhay\\Bak\\FIrst\\obj\\",
+        "projectPath": "C:\\Users\\bakty\\Documents_local\\Abhay\\project\\bak\\FIrst\\FIrst.csproj",
+        "packagesPath": "C:\\Users\\bakty\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bakty\\Documents_local\\Abhay\\project\\bak\\FIrst\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\AjayV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bakty\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
