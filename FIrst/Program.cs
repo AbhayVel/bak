@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FIrst
 {
@@ -19,21 +20,34 @@ namespace FIrst
             int[] answer = SortNumbers(employee, (x) => x > 30);  //call back method/annonomious method
                                                                   //int[] answer2 = SortNumbers2(employee, 80);
                                                                   // int[] answer2 = CombinedFunc(employee, 80, "top");
-            int[] answer2 = Util.Common(employee, (x) => x < 80);
-            int[] answer3 = Util.Common(answer2, (x) => x > 40);
+            List<int> answer2 =Util.ToMyList( Util.Common(employee, (x) => x < 80));
+            //int[] answer3 = Util.Common(answer2, (x) => x > 40);
+
+            var nameOfEmployees = new string[] { "Bak", "John", "jhon", "Abhay", "Mac", "Kally", "Bal" };
+            var resulty = Util.Common(nameOfEmployees, (x) => x.StartsWith("y"));
+
+            List<int> ages = new List<int>(9) { 1, 34, 56, 12, 78, 89, 29, 77, 66 };
+
+            List<int> answer34= Util.ToMyList( Util.Common(ages, (x) => x > 40));
+
+
+
+            //List==> Array 
+
+            int[] listExm = new int[4];
 
 
             //int[] answer3 = SortNumbers3(employee, 2);
-            int[] answer3 = CombinedFunc(employee, 2, "divisor");
+            //  int[] answer3 = CombinedFunc(employee, 2, "divisor");
 
             //Print(answer);
             //Print(answer2);
             Console.WriteLine("answer 1:");
             Print(answer);
             Console.WriteLine("answer 2:");
-            Print(answer2);
+          //  Print(answer2);
             Console.WriteLine("answer 3:");
-            Print(answer3);
+           // Print(answer3);
 
 
         }
