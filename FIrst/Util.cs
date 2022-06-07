@@ -19,7 +19,8 @@ namespace FIrst
             int i = 0;
             foreach (var item in array)
             {
-                ts[i++]=item;
+                ts[i]=item;
+                i = i + 1;
             }
             return ts;
         }
