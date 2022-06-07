@@ -18,7 +18,6 @@ C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\bin\Debug\netcoreapp3.1\F
 C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\bin\Debug\netcoreapp3.1\FIrst.runtimeconfig.dev.json
 C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\bin\Debug\netcoreapp3.1\FIrst.dll
 C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\bin\Debug\netcoreapp3.1\FIrst.pdb
-C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.csproj.AssemblyReference.cache
 C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.AssemblyInfoInputs.cache
 C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.AssemblyInfo.cs
@@ -26,3 +25,4 @@ C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\obj\Debug\netcoreapp3.1\F
 C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.dll
 C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.pdb
 C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.genruntimeconfig.cache
+C:\Users\bakty\Documents_local\Abhay\project\bak\FIrst\obj\Debug\netcoreapp3.1\FIrst.csproj.AssemblyReference.cache

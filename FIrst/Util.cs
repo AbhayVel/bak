@@ -46,6 +46,8 @@ namespace FIrst
                 }
             }            
         }
+
+
         //public static T[] Common<T>(T[] array, FunAnyWhere<T> func)
         //{
         //    T[] result = new T[array.Length];
