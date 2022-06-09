@@ -7,239 +7,39 @@ namespace FIrst
 
 
     //cutom data type 
-   delegate bool FunWhere(int str); //Method signature->Datatype  //Deleget 
-
+    
     //Hold method => with same siganature 
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] x)
         {
-            int[] employee = new int[] { 1, 34, 56, 12, 78, 89, 29, 77, 66 };
 
-            //int[] answer = SortNumbers(employee, 20);
-            //int[] answer = CombinedFunc(employee, 20, "bottom");
-            int[] answer = SortNumbers(employee, (x) => x > 30);  //call back method/annonomious method
-                                                                  //int[] answer2 = SortNumbers2(employee, 80);
-           //Linq                     
-            var d = Util.Common(employee, (x) => x < 80);
-            var lst = Util.ToMyList(d);
-            // int[] answer2 = CombinedFunc(employee, 80, "top");
-            List<int> answer2 =Util.ToMyList( Util.Common(employee, (x) => x < 80));
-            int i = employee.FirstOrDefault(x => x > 30);
-            //int[] answer3 = Util.Common(answer2, (x) => x > 40);
+            int i = 0;
+            if(x.Length > 0)  int.TryParse(x[0], out i);
 
-            var namesOfEmployees = new string[] { "Bak", "John", "Jim", "Abhay", "Mac", "Kally", "Bal" };
-            var resulty = Util.Common(namesOfEmployees, (x) => x.StartsWith("y"));
+            var employees = new Employee[] { 
+            new Employee{ Id=1, Name="ABhay",Salary=120000},
+             new Employee{ Id=2, Name="Bak",Salary=120000},
+              new Employee{ Id=3, Name="John",Salary=120000},
+               new Employee{ Id=4, Name="Marry",Salary=120000},
+                new Employee{ Id=5, Name="Jhon",Salary=120000},
 
-            List<int> ages = new List<int>(9) { 1, 34, 56, 12, 78, 89, 29, 77, 66 };
-            int[] numbers = new int[] { 5, 46, 34, 23, 89, 67, 56, 50 };
-
-            List<int> answer34= Util.ToMyList( Util.Common(ages, (x) => x > 40));
-
-            string[] filteredStrings = MyUtil.FilterStrings(namesOfEmployees, (x) => x.StartsWith("J"));
-            PrintStr(filteredStrings);
-
-            int[] filteredInts = MyUtil.FilterInts(numbers, (x) => x > 40);
-            PrintInt(filteredInts);
-            //List==> Array 
-
-            int[] listExm = new int[4];
+            };
 
 
-            //int[] answer3 = SortNumbers3(employee, 2);
-            //  int[] answer3 = CombinedFunc(employee, 2, "divisor");
+            string str = System.IO.File.ReadAllText("../../../temp.html");
+           
 
-            //Print(answer);
-            //Print(answer2);
-            //Console.WriteLine("answer 1:");
-            //Print(answer);
-            //Console.WriteLine("answer 2:");
-          //  Print(answer2);
-            //Console.WriteLine("answer 3:");
-           // Print(answer3);
+            str = str.Replace("@name", employees[i].Name);
+            str = str.Replace("@id", employees[i].Id.ToString());
+            str = str.Replace("@salary", employees[i].Salary.ToString());
 
+            Console.WriteLine(str);
+
+            System.IO.File.WriteAllText("../../../index.html", str);
 
         }
 
-        public static int[] SortNumbers(int[] array, FunWhere func)
-        {
-            int[] result = new int[array.Length];
-            int counter = 0;
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (func(array[i]))
-                {
-                    result[counter] = array[i];
-                    counter++;
-                }
-            }
-            int[] result2 = new int[counter];
-            int counter2 = 0;
-            for (int i = 0; i < result.Length; i++)
-            {
-                if (result[i] != 0)
-                {
-                    result2[counter2] = result[i];
-                    counter2++;
-                }
-            }
-            return result2;
-        }
-
-        public static int[] SortNumbers2(int[] array, int upperLimit)
-        {
-            int[] result = new int[array.Length];
-            int counter = 0;
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] <= upperLimit)
-                {
-                    result[counter] = array[i];
-                    counter++;
-                }
-            }
-            int[] result2 = new int[counter];
-            int counter2 = 0;
-            for (int i = 0; i < result.Length; i++)
-            {
-                if (result[i] != 0)
-                {
-                    result2[counter2] = result[i];
-                    counter2++;
-                }
-            }
-            return result2;
-        }
-
-        public static int[] SortNumbers3(int[] array, int divisor)
-        {
-            int[] result = new int[array.Length];
-            int counter = 0;
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] % divisor == 0)
-                {
-                    result[counter] = array[i];
-                    counter++;
-                }
-            }
-            int[] result2 = new int[counter];
-            int counter2 = 0;
-            for (int i = 0; i < result.Length; i++)
-            {
-                if (result[i] != 0)
-                {
-                    result2[counter2] = result[i];
-                    counter2++;
-                }
-            }
-            return result2;
-        }
-
-        public static int[] CombinedFunc(int[] array, int number, string condition)
-        {
-            int[] result = new int[array.Length];
-            int counter = 0;
-
-            if (condition.Equals("top", StringComparison.OrdinalIgnoreCase))
-            {
-
-                for (int i = 0; i < array.Length; i++)
-                {
-                    if (array[i] <= number)
-                    {
-                        result[counter] = array[i];
-                        counter++;
-                    }
-                }
-
-                int[] result2 = new int[counter];
-                int counter2 = 0;
-
-                for (int i = 0; i < result.Length; i++)
-                {
-                    if (result[i] != 0)
-                    {
-                        result2[counter2] = result[i];
-                        counter2++;
-                    }
-                }
-                return result2;
-            }
-
-            else if (condition.Equals("bottom", StringComparison.OrdinalIgnoreCase))
-            {
-
-                for (int i = 0; i < array.Length; i++)
-                {
-                    if (array[i] >= number)
-                    {
-                        result[counter] = array[i];
-                        counter++;
-                    }
-                }
-
-                int[] result2 = new int[counter];
-                int counter2 = 0;
-
-                for (int i = 0; i < result.Length; i++)
-                {
-                    if (result[i] != 0)
-                    {
-                        result2[counter2] = result[i];
-                        counter2++;
-                    }
-                }
-                return result2;
-            }
-            else if (condition.Equals("divisor", StringComparison.OrdinalIgnoreCase))
-            {
-
-                for (int i = 0; i < array.Length; i++)
-                {
-                    if (array[i] % number == 0)
-                    {
-                        result[counter] = array[i];
-                        counter++;
-                    }
-                }
-
-                int[] result2 = new int[counter];
-                int counter2 = 0;
-
-                for (int i = 0; i < result.Length; i++)
-                {
-                    if (result[i] != 0)
-                    {
-                        result2[counter2] = result[i];
-                        counter2++;
-                    }
-                }
-                return result2;
-            } else
-            {
-                return null;
-            }
-
-        }
-
-        private static void PrintInt(int[] employees)
-        {
-            for (int i = 0; i < employees.Length; i = i + 1)
-            {
-                Console.WriteLine(employees[i]);
-            }
-        }
-
-        private static void PrintStr(string[] employees)
-        {
-            for (int i = 0; i < employees.Length; i = i + 1)
-            {
-                Console.WriteLine(employees[i]);
-            }
-        }
+         
     }
 }
