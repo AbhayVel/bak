@@ -4,10 +4,10 @@ using System.Text;
 
 namespace FIrst
 {
-    delegate bool FunAnyWhere<T>(T value);
-    internal class Util
+   public delegate bool FunAnyWhere<T>(T value);
+    public static class Util
     {
-        public static T[] ToMyArray<T>(IEnumerable<T> array)
+        public static T[] ToMyArray<T>(this IEnumerable<T> array)
         {
             int count = 0;
 
@@ -25,7 +25,7 @@ namespace FIrst
             return ts;
         }
 
-        public static List<T> ToMyList<T>(IEnumerable<T> array)
+        public static List<T> ToMyList<T>(this IEnumerable<T> array)
         {
              List<T> list = new List<T>();
             foreach (var item in array)
@@ -36,17 +36,16 @@ namespace FIrst
         }
 
 
-        public static IEnumerable<T> Common<T>(IEnumerable<T> array, FunAnyWhere<T> func)
+        public static IEnumerable<T> Common<T>(this IEnumerable<T> array, FunAnyWhere<T> predicate)
         {
            // List<T> result = new List<T>();
-           foreach (var a in array)
+           foreach (var element in array)
              {
-                if (func(a))
-                {
-                     yield return a;                     
-                }
+                if (predicate(element)) yield return element;
             }            
         }
+
+
         //public static T[] Common<T>(T[] array, FunAnyWhere<T> func)
         //{
         //    T[] result = new T[array.Length];

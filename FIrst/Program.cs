@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FIrst
 {
@@ -19,23 +20,27 @@ namespace FIrst
             //int[] answer = CombinedFunc(employee, 20, "bottom");
             int[] answer = SortNumbers(employee, (x) => x > 30);  //call back method/annonomious method
                                                                   //int[] answer2 = SortNumbers2(employee, 80);
-                               
+           //Linq                     
             var d = Util.Common(employee, (x) => x < 80);
             var lst = Util.ToMyList(d);
             // int[] answer2 = CombinedFunc(employee, 80, "top");
             List<int> answer2 =Util.ToMyList( Util.Common(employee, (x) => x < 80));
-          //  List<int> answer3 = employee.Common((x) => x < 80)).ToMyList();
+            int i = employee.FirstOrDefault(x => x > 30);
             //int[] answer3 = Util.Common(answer2, (x) => x > 40);
 
-            var nameOfEmployees = new string[] { "Bak", "John", "jhon", "Abhay", "Mac", "Kally", "Bal" };
-            var resulty = Util.Common(nameOfEmployees, (x) => x.StartsWith("y"));
+            var namesOfEmployees = new string[] { "Bak", "John", "Jim", "Abhay", "Mac", "Kally", "Bal" };
+            var resulty = Util.Common(namesOfEmployees, (x) => x.StartsWith("y"));
 
             List<int> ages = new List<int>(9) { 1, 34, 56, 12, 78, 89, 29, 77, 66 };
+            int[] numbers = new int[] { 5, 46, 34, 23, 89, 67, 56, 50 };
 
             List<int> answer34= Util.ToMyList( Util.Common(ages, (x) => x > 40));
 
+            string[] filteredStrings = MyUtil.FilterStrings(namesOfEmployees, (x) => x.StartsWith("J"));
+            PrintStr(filteredStrings);
 
-
+            int[] filteredInts = MyUtil.FilterInts(numbers, (x) => x > 40);
+            PrintInt(filteredInts);
             //List==> Array 
 
             int[] listExm = new int[4];
@@ -46,11 +51,11 @@ namespace FIrst
 
             //Print(answer);
             //Print(answer2);
-            Console.WriteLine("answer 1:");
-            Print(answer);
-            Console.WriteLine("answer 2:");
+            //Console.WriteLine("answer 1:");
+            //Print(answer);
+            //Console.WriteLine("answer 2:");
           //  Print(answer2);
-            Console.WriteLine("answer 3:");
+            //Console.WriteLine("answer 3:");
            // Print(answer3);
 
 
@@ -221,7 +226,15 @@ namespace FIrst
 
         }
 
-        private static void Print(int[] employees)
+        private static void PrintInt(int[] employees)
+        {
+            for (int i = 0; i < employees.Length; i = i + 1)
+            {
+                Console.WriteLine(employees[i]);
+            }
+        }
+
+        private static void PrintStr(string[] employees)
         {
             for (int i = 0; i < employees.Length; i = i + 1)
             {
