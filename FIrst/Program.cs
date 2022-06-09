@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FIrst
 {
@@ -19,8 +20,12 @@ namespace FIrst
             //int[] answer = CombinedFunc(employee, 20, "bottom");
             int[] answer = SortNumbers(employee, (x) => x > 30);  //call back method/annonomious method
                                                                   //int[] answer2 = SortNumbers2(employee, 80);
-                                                                  // int[] answer2 = CombinedFunc(employee, 80, "top");
+           //Linq                     
+            var d = Util.Common(employee, (x) => x < 80);
+            var lst = Util.ToMyList(d);
+            // int[] answer2 = CombinedFunc(employee, 80, "top");
             List<int> answer2 =Util.ToMyList( Util.Common(employee, (x) => x < 80));
+            int i = employee.FirstOrDefault(x => x > 30);
             //int[] answer3 = Util.Common(answer2, (x) => x > 40);
 
             var namesOfEmployees = new string[] { "Bak", "John", "Jim", "Abhay", "Mac", "Kally", "Bal" };
