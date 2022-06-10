@@ -7,39 +7,33 @@ namespace FIrst
 
 
     //cutom data type 
-    
+
     //Hold method => with same siganature 
     internal class Program
     {
         static void Main(string[] x)
         {
 
+             
+            var route = "e";
             int i = 0;
-            if(x.Length > 0)  int.TryParse(x[0], out i);
+            if (x.Length > 1) int.TryParse(x[1], out i);
+            if (x.Length > 0) route = x[0];
 
-            var employees = new Employee[] { 
-            new Employee{ Id=1, Name="ABhay",Salary=120000},
-             new Employee{ Id=2, Name="Bak",Salary=120000},
-              new Employee{ Id=3, Name="John",Salary=120000},
-               new Employee{ Id=4, Name="Marry",Salary=120000},
-                new Employee{ Id=5, Name="Jhon",Salary=120000},
+            if (route.Equals("p"))
+            {
+                PersonController person= new PersonController();
+                person.Index(i);
+            }
+            else
+            {
+                EmployeeController employeeController = new EmployeeController();
+                employeeController.Index(i);
+            }
 
-            };
-
-
-            string str = System.IO.File.ReadAllText("../../../temp.html");
-           
-
-            str = str.Replace("@name", employees[i].Name);
-            str = str.Replace("@id", employees[i].Id.ToString());
-            str = str.Replace("@salary", employees[i].Salary.ToString());
-
-            Console.WriteLine(str);
-
-            System.IO.File.WriteAllText("../../../index.html", str);
 
         }
 
-         
+
     }
 }
