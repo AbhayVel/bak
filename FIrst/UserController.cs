@@ -7,7 +7,7 @@ namespace FIrst
     public class UserController
     {
 
-        public void Index(int i)
+        public Users Index(int i)
         {
             var employees = new Users[] {
             new Users{ Id=1, Name="ABhay",Salary=120000},
@@ -18,17 +18,17 @@ namespace FIrst
 
             };
 
+            return employees[i];
+            //string str = System.IO.File.ReadAllText("../../../tempUser.html");
 
-            string str = System.IO.File.ReadAllText("../../../tempUser.html");
 
+            //str = str.Replace("@name", employees[i].Name);
+            //str = str.Replace("@id", employees[i].Id.ToString());
+            //str = str.Replace("@salary", employees[i].Salary.ToString());
 
-            str = str.Replace("@name", employees[i].Name);
-            str = str.Replace("@id", employees[i].Id.ToString());
-            str = str.Replace("@salary", employees[i].Salary.ToString());
+            //Console.WriteLine(str);
 
-            Console.WriteLine(str);
-
-            System.IO.File.WriteAllText("../../../index.html", str);
+            //System.IO.File.WriteAllText("../../../index.html", str);
         }
     }
 }

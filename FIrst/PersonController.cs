@@ -4,31 +4,29 @@ using System.Text;
 
 namespace FIrst
 {
-    public class PersonController
+    public class PersonController //Controller
     {
 
-        public void Index(int i)
+        public Person Index(int i) //Action
         {
             var employees = new Person[] {
-            new Person{ Id=1, Name="ABhay",Salary=120000},
-             new Person{ Id=2, Name="Bak",Salary=120000},
+            new Person{ Id=1, Name="Bak",Salary=120000},
+             new Person{ Id=2, Name="Abhay",Salary=120000},
               new Person{ Id=3, Name="John",Salary=120000},
                new Person{ Id=4, Name="Marry",Salary=120000},
                 new Person{ Id=5, Name="Jhon",Salary=120000},
 
             };
 
-
-            string str = System.IO.File.ReadAllText("../../../tempp.html");
-
-
-            str = str.Replace("@name", employees[i].Name);
-            str = str.Replace("@id", employees[i].Id.ToString());
-            str = str.Replace("@salary", employees[i].Salary.ToString());
-
-            Console.WriteLine(str);
-
-            System.IO.File.WriteAllText("../../../indexp.html", str);
+            return employees[i];            
         }
+
+        public Person EditPerson(int i) //Action
+        {
+            var p = new Person { Id = 5, Name = "Jhon", Salary = 120000 };
+            return p;
+        }
+
     }
+
 }

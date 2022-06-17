@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FIrst
 {
-    public class Person
+    public class Person //Model or Entity 
     {
         public int Id { get; set; }
 
