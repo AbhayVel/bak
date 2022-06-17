@@ -16,8 +16,8 @@ namespace FIrst
         static void Main(string[] args)
         {
             string action="Index";
-            string controller = "Person"+"Controller";
-            string controllerName = "Person";
+            string controller = "Employee"+"Controller";
+            string controllerName = "Employee";
             if (args.Length > 0)
             {
                 var path = args[0];
