@@ -12,6 +12,7 @@ namespace StudentMS.Controllers
 
         public IActionResult Edit()
         {
+
             return View();
         }
     }
