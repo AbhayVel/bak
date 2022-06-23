@@ -1,0 +1,31 @@
+﻿@using StudentMS.Entities
+@model List<Instructor>
+
+
+
+<table class="table">
+    <tr>
+        <td><a href="/instructor/index?columnName=id&orderBY=asc">Id</a></td>
+        <td><a href="/instructor/index?columnName=FirstName&orderBY=asc">First Name</a></td>
+        <td><a href="/instructor/index?columnName=LastName&orderBY=asc">Last Name</a></td>
+        <td><a href="/instructor/index?columnName=Department&orderBY=asc">Department</a></td>
+        <td><a href="/instructor/index?columnName=Email&orderBY=asc">Email</a></td>
+        <td><a href="/instructor/index?columnName=Salary&orderBY=asc">Salary</a></td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.FirstName</td>
+    <td>@item.LastName</td>
+    <td>@item.Department</td>
+    <td>@item.Email</td>
+    <td>@item.Salary</td>
+</tr>}
+
+
+
+
+
+</table>
