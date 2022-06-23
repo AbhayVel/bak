@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudentMS.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,23 +8,75 @@ namespace StudentMS.Controllers
 {
     public class StudentController : Controller
     {
-        public IActionResult Index(string columnName, string orderBY)
+        public IActionResult Index(string columnName, string orderBY, string Id, string FirstName, string LastName)
         {
             var lstStuent = GetStudentList();
-            if("id".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
+
+            if (!string.IsNullOrEmpty(Id))
             {
-                lstStuent = lstStuent.OrderBy(x => x.Id).ToList();
+                int id = 0;
+                bool isParsed = int.TryParse(Id, out id);
+                if (isParsed)
+                {
+                    lstStuent= lstStuent.Where(x=>x.Id==id).ToList(); 
+                }
+            }
+
+            if (!string.IsNullOrEmpty(FirstName))
+            {               
+                    lstStuent = lstStuent.Where(x => x.FirstName.ToLower().Contains(FirstName.ToLower())).ToList();
+             }
+
+            if (!string.IsNullOrEmpty(LastName))
+            {
+                lstStuent = lstStuent.Where(x => x.LastName.ToLower().Contains(LastName.ToLower())).ToList();
+            }
+
+
+            if ("id".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
+            {
+                if ("asc".Equals(orderBY, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    lstStuent = lstStuent.OrderBy(x => x.Id).ToList();
+                } else
+                {
+                    lstStuent = lstStuent.OrderByDescending(x => x.Id).ToList();
+                }
             }
             if ("FirstName".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                lstStuent = lstStuent.OrderBy(x => x.FirstName).ToList();
+                if ("asc".Equals(orderBY, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    lstStuent = lstStuent.OrderBy(x => x.FirstName).ToList();
+                } else
+                {
+                    lstStuent = lstStuent.OrderByDescending(x => x.FirstName).ToList();
+                }
             }
 
             if ("LastName".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                lstStuent = lstStuent.OrderBy(x => x.LastName).ToList();
+                if ("asc".Equals(orderBY, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    lstStuent = lstStuent.OrderBy(x => x.LastName).ToList();
+                } else
+                {
+                    lstStuent = lstStuent.OrderByDescending(x => x.LastName).ToList();
+                }
             }
 
+            if ("asc".Equals(orderBY, StringComparison.CurrentCultureIgnoreCase))
+            {
+                ViewBag.OrderBY = "desc";
+            }
+            else
+            {
+                ViewBag.OrderBY = "asc";
+            }
+
+            ViewBag.Id = Id;
+            ViewBag.FirstName = FirstName;
+            ViewBag.LastName = LastName;
             return View(lstStuent);
         }
 

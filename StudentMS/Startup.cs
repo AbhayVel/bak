@@ -51,7 +51,7 @@ namespace StudentMS
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Person}/{action=Index}/{id?}");
+                    pattern: "{controller=Student}/{action=Index}/{id?}");
             });
         }
     }

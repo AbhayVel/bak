@@ -14,33 +14,79 @@ namespace StudentMS.Controllers
             var instructorsList = GetInstructorsList();
             if("Id".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                instructorsList = instructorsList.OrderBy(x => x.Id).ToList();
+                if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    instructorsList = instructorsList.OrderBy(x => x.Id).ToList();
+                }else
+                {
+                    instructorsList = instructorsList.OrderByDescending(x => x.Id).ToList();
+                }
             }
 
             if ("FirstName".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                instructorsList = instructorsList.OrderBy(x => x.FirstName).ToList();
+                if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    instructorsList = instructorsList.OrderBy(x => x.FirstName).ToList();
+                }
+                else
+                {
+                    instructorsList = instructorsList.OrderByDescending(x => x.FirstName).ToList();
+                }
             }
 
             if ("LastName".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                instructorsList = instructorsList.OrderBy(x => x.LastName).ToList();
+                if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    instructorsList = instructorsList.OrderBy(x => x.LastName).ToList();
+                } else
+                {
+                    instructorsList = instructorsList.OrderByDescending(x => x.LastName).ToList();
+                }
             }
 
             if ("Department".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                instructorsList = instructorsList.OrderBy(x => x.Department).ToList();
+                if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    instructorsList = instructorsList.OrderBy(x => x.Department).ToList();
+                } else
+                {
+                    instructorsList = instructorsList.OrderByDescending(x => x.Department).ToList();
+                }
             }
 
             if ("Email".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                instructorsList = instructorsList.OrderBy(x => x.Email).ToList();
+                if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    instructorsList = instructorsList.OrderBy(x => x.Email).ToList();
+                }else
+                {
+                    instructorsList = instructorsList.OrderByDescending(x => x.Email).ToList();
+                }
             }
 
             if ("Salary".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                instructorsList = instructorsList.OrderBy(x => x.Salary).ToList();
+                if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    instructorsList = instructorsList.OrderBy(x => x.Salary).ToList();
+                }else
+                {
+                    instructorsList = instructorsList.OrderByDescending(x => x.Salary).ToList();
+                }
             }
+
+            if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
+            {
+                ViewBag.OrderBY = "desc";
+            } else
+            {
+                ViewBag.OrderBY = "asc";
+            }
+           
             return View(instructorsList);
         }
 

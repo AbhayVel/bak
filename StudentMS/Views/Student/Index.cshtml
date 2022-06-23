@@ -1,15 +1,41 @@
 ﻿@using StudentMS.Entities
 @model List<Student>
 
+    <form action="/student/Index" method="post">
+        <div class="formgroup">
+            <label>Id</label>
+            <input type="text" name="Id" value="@ViewBag.Id" />
+
+            
+        </div>
+
+        <div class="formgroup">
+            <label>FirstName</label>
+            <input type="text" name="FirstName" value="@ViewBag.FirstName" />
+
+            
+        </div>
+
+         <div class="formgroup">
+            <label>FirstName</label>
+            <input type="text" name="LastName" value="@ViewBag.LastName" />
+
+            
+        </div>
+
+
+        <button type="submit">Search</button>
+
+    </form>
 
     
  <table class="table">
      <tr>
-         <td><a href="/student/index?columnName=id&orderBY=asc">Id</a></td>
-         <td><a href="/student/index?columnName=FirstName&orderBY=asc">First Name</a></td>
-         <td><a href="/student/index?columnName=LastName&orderBY=asc">Last Name:</a></td>
-         <td><a href="/student/index?columnName=Class&orderBY=asc">Class</a></td>
-         <td><a href="/student/index?columnName=Fees&orderBY=asc">Fees</a></td>
+         <td><a href="/student/index?columnName=id&orderBY=@ViewBag.OrderBY">Id</a></td>
+         <td><a href="/student/index?columnName=FirstName&orderBY=@ViewBag.OrderBY">First Name</a></td>
+         <td><a href="/student/index?columnName=LastName&orderBY=@ViewBag.OrderBY">Last Name:</a></td>
+         <td><a href="/student/index?columnName=Class&orderBY=@ViewBag.OrderBY">Class</a></td>
+         <td><a href="/student/index?columnName=Fees&orderBY=@ViewBag.OrderBY">Fees</a></td>
          <td>Age</td>
      </tr>
 
