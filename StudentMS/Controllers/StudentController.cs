@@ -8,7 +8,8 @@ namespace StudentMS.Controllers
 {
     public class StudentController : Controller
     {
-        public IActionResult Index(string columnName, string orderBY, string Id, string FirstName, string LastName)
+        //columnName for orderBY
+        public IActionResult Index(string Id, string FirstName, string LastName, string columnName = "FirstName", string orderBy = "asc")
         {
             var lstStuent = GetStudentList();
 
@@ -35,8 +36,9 @@ namespace StudentMS.Controllers
 
             if ("id".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                if ("asc".Equals(orderBY, StringComparison.CurrentCultureIgnoreCase))
+                if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
                 {
+                     
                     lstStuent = lstStuent.OrderBy(x => x.Id).ToList();
                 } else
                 {
@@ -45,7 +47,7 @@ namespace StudentMS.Controllers
             }
             if ("FirstName".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                if ("asc".Equals(orderBY, StringComparison.CurrentCultureIgnoreCase))
+                if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
                 {
                     lstStuent = lstStuent.OrderBy(x => x.FirstName).ToList();
                 } else
@@ -56,7 +58,7 @@ namespace StudentMS.Controllers
 
             if ("LastName".Equals(columnName, System.StringComparison.CurrentCultureIgnoreCase))
             {
-                if ("asc".Equals(orderBY, StringComparison.CurrentCultureIgnoreCase))
+                if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
                 {
                     lstStuent = lstStuent.OrderBy(x => x.LastName).ToList();
                 } else
@@ -65,15 +67,16 @@ namespace StudentMS.Controllers
                 }
             }
 
-            if ("asc".Equals(orderBY, StringComparison.CurrentCultureIgnoreCase))
-            {
-                ViewBag.OrderBY = "desc";
-            }
-            else
-            {
-                ViewBag.OrderBY = "asc";
-            }
-
+            //if ("asc".Equals(orderBy, StringComparison.CurrentCultureIgnoreCase))
+            //{
+            //    ViewBag.OrderBy = "desc";
+            //}
+            //else
+            //{
+            //    ViewBag.OrderBy = "asc";
+            //}
+            ViewBag.OrderBy = orderBy;
+            ViewBag.ColumnName = columnName;
             ViewBag.Id = Id;
             ViewBag.FirstName = FirstName;
             ViewBag.LastName = LastName;

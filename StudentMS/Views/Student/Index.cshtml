@@ -23,19 +23,20 @@
             
         </div>
 
-
-        <button type="submit">Search</button>
+        <input type="hidden" id="orderBy" name="orderBy" value="@ViewBag.OrderBy" />
+         <input type="hidden" id="columnName" name="columnName" value="@ViewBag.ColumnName" />
+        <button type="submit" id="btnSubmit">Search</button>
 
     </form>
 
     
  <table class="table">
      <tr>
-         <td><a href="/student/index?columnName=id&orderBY=@ViewBag.OrderBY">Id</a></td>
-         <td><a href="/student/index?columnName=FirstName&orderBY=@ViewBag.OrderBY">First Name</a></td>
-         <td><a href="/student/index?columnName=LastName&orderBY=@ViewBag.OrderBY">Last Name:</a></td>
-         <td><a href="/student/index?columnName=Class&orderBY=@ViewBag.OrderBY">Class</a></td>
-         <td><a href="/student/index?columnName=Fees&orderBY=@ViewBag.OrderBY">Fees</a></td>
+         <td><a onclick="sortSetData('id','@ViewBag.OrderBy')" >Id</a></td>
+         <td><a onclick="sortSetData('FirstName','@ViewBag.OrderBy')">First Name</a></td>
+         <td><a onclick="sortSetData('LastName','@ViewBag.OrderBy')" href="/student/index?columnName=LastName&orderBy=@ViewBag.OrderBy">Last Name:</a></td>
+         <td><a onclick="sortSetData('Class','@ViewBag.OrderBy')" href="/student/index?columnName=Class&orderBy=@ViewBag.OrderBy">Class</a></td>
+         <td><a onclick="sortSetData('Fees','@ViewBag.OrderBy')" href="/student/index?columnName=Fees&orderBy=@ViewBag.OrderBy">Fees</a></td>
          <td>Age</td>
      </tr>
 
@@ -56,3 +57,29 @@
 
 
  </table>
+
+ <script>
+ 
+ 
+ function sortSetData(columnName,orderBy){
+     event.preventDefault();    
+     debugger;
+      document.getElementById("columnName").value=columnName;
+      if("asc"==orderBy){
+          orderBy='desc'
+      }else {
+            orderBy='asc'
+      }
+
+      document.getElementById("orderBy").value=orderBy;
+
+     $("#columnName").val(columnName);
+     $("#orderBy").val(orderBy);
+     $("#btnSubmit").click();
+     return false;
+ }
+ 
+ //#-> ID ->$("#id")
+ //.->Class -> $(".class")
+ //Tag Name-> $("tagname")
+ </script>
